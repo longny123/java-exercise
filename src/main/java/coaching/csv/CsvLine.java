@@ -1,9 +1,19 @@
 package coaching.csv;
 
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Supplies information about CSV line
  */
 public class CsvLine {
+
+    Map<Integer, String> dataList;
+
+    public CsvLine(){
+        dataList = new HashMap<>();
+    }
 
     /**
      * Get data at specific position in a row
@@ -12,7 +22,7 @@ public class CsvLine {
      * @return Data
      */
     public String get(int index) {
-        throw new UnsupportedOperationException("This method is not implemented yet, please implement");
+       return dataList.get(index);
     }
 
     /**
@@ -22,6 +32,15 @@ public class CsvLine {
      * @param data     Data
      */
     public void set(int position, String data) {
-        throw new UnsupportedOperationException("This method is not implemented yet, please implement");
+        dataList.put(position, data);
+    }
+
+    /**
+     * Get data
+     *
+     * @return
+     */
+    public Collection<String> getData() {
+        return dataList.values();
     }
 }
